@@ -24,13 +24,6 @@ namespace DroidFragmentCrash.ViewModels
             Title = "Show Values";
         }
 
-		protected override void HandleIsActiveTrue(object sender, EventArgs e)
-		{
-            if (!IsActive) return;
-
-
-		}
-
 		public async override void OnNavigatedTo(NavigationParameters parameters)
 		{
             try
