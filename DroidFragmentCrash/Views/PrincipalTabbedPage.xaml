@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:views="clr-namespace:DroidFragmentCrash.Views;assembly=DroidFragmentCrash"
+            x:Class="DroidFragmentCrash.Views.PrincipalTabbedPage">
+    
+    <TabbedPage.Children>
+        <NavigationPage Title="Values">
+            <x:Arguments>
+                <views:ShowValuesPage/>
+            </x:Arguments>
+        </NavigationPage>
+        
+        <views:AccountPage/>
+    </TabbedPage.Children>
+    
+</TabbedPage>

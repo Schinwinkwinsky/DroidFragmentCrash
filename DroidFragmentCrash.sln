@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DroidFragmentCrash", "DroidFragmentCrash\DroidFragmentCrash.csproj", "{5ADC169C-8C59-482A-B393-A02C8677B6F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DroidFragmentCrash.Droid", "DroidFragmentCrash.Droid\DroidFragmentCrash.Droid.csproj", "{E57B9F6A-13AA-4797-A2F1-EAA92AD118BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DroidFragmentCrash.WebAPI", "DroidFragmentCrash.WebAPI\DroidFragmentCrash.WebAPI.csproj", "{F021D82C-A217-4AE5-AD01-0C3BA49EDC5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5ADC169C-8C59-482A-B393-A02C8677B6F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ADC169C-8C59-482A-B393-A02C8677B6F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ADC169C-8C59-482A-B393-A02C8677B6F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ADC169C-8C59-482A-B393-A02C8677B6F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E57B9F6A-13AA-4797-A2F1-EAA92AD118BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E57B9F6A-13AA-4797-A2F1-EAA92AD118BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E57B9F6A-13AA-4797-A2F1-EAA92AD118BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E57B9F6A-13AA-4797-A2F1-EAA92AD118BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F021D82C-A217-4AE5-AD01-0C3BA49EDC5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F021D82C-A217-4AE5-AD01-0C3BA49EDC5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F021D82C-A217-4AE5-AD01-0C3BA49EDC5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F021D82C-A217-4AE5-AD01-0C3BA49EDC5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

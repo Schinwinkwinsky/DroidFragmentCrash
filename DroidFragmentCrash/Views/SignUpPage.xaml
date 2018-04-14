@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behavior="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             x:Class="DroidFragmentCrash.Views.SignUpPage"
+             Title="{Binding Title}">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Spacing="10" Orientation="Horizontal">
+                <Label Text="Contract" TextColor="{StaticResource Primary}" VerticalOptions="Center"/>
+                <Switch IsToggled="{Binding ContractSwitch}">
+                    <Switch.Behaviors>
+                        <behavior:EventToCommandBehavior EventName="Toggled" Command="{Binding GoToContractPageCommand}"/>
+                    </Switch.Behaviors>    
+                </Switch>
+            </StackLayout>
+            
+            <Button Text="Sign Up" Command="{Binding SignUpCommand}" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </StackLayout>
+
+    </ContentPage.Content>
+    
+</ContentPage>
