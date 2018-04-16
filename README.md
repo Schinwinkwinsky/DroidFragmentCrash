@@ -16,4 +16,6 @@ To run the Android project I used the Genymotion emulator.
 
 The app goes to the ShowValuesPage that shows a list of values obtained from the Web API. If the user is not authorized, the app goes to SignInPage. If the user doesn't have an account he can go to SignUpPage. There, he needs to accept to contract at ContractPage. When the user do the sign up, the app get a authorization token from the Web API. Then the app goes to ShowValuesPage again to get the values. But when it tries to access the Web API again, the exception is thrown.
 
+Note: If you execute the app again after the crash, it will have an Authorization Token and it won´t break. You need to go to Account Tab and Sign Out.
+
 Exception: Java.Lang.IllegalArgumentException - No view found for id (some address) for fragment FragmentContainer.
