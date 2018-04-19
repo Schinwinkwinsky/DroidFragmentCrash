@@ -9,12 +9,17 @@ namespace DroidFragmentCrash.ViewModels
 {
     public class AccountPageViewModel : BaseTabViewModel
     {
+        private readonly IAccountManager _accountManager;
+
         public DelegateCommand SignOutCommand { get; set; }
 
-        public AccountPageViewModel(INavigationService navigationService,
-                                       IUserDialogs userDialogs) 
+        public AccountPageViewModel(IAccountManager accountManager,
+                                    INavigationService navigationService,
+                                    IUserDialogs userDialogs) 
             : base(navigationService, userDialogs)
         {
+            _accountManager = accountManager;
+
             Title = "Account";
 
             SignOutCommand = new DelegateCommand(async () => await SignOut());
@@ -24,7 +29,7 @@ namespace DroidFragmentCrash.ViewModels
         {
             IsBusy = true;
 
-            AccountManager.DefaultInstance.SignOut();
+            _accountManager.SignOut();
 
             IsBusy = false;
 

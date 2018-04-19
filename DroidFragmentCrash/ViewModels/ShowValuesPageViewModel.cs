@@ -17,10 +17,14 @@ namespace DroidFragmentCrash.ViewModels
             set => SetProperty(ref infoList, value);
         }
 
+        private readonly DataManager<Information> _informationManager;
+
         public ShowValuesPageViewModel(INavigationService navigationService,
                                        IUserDialogs userDialogs) 
             : base(navigationService, userDialogs)
         {
+            _informationManager = new DataManager<Information>("informations");
+
             Title = "Show Values";
         }
 
@@ -28,7 +32,7 @@ namespace DroidFragmentCrash.ViewModels
 		{
             try
             {
-                InfoList = await InformationManager.DefaultInstance.GetInformationListAsync();
+                InfoList = await _informationManager.GetAllAsync();
             }
             catch (Exception ex)
             {

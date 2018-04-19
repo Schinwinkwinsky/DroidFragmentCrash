@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Acr.Settings;
 using Acr.UserDialogs;
+using DroidFragmentCrash.Data;
 using DroidFragmentCrash.ViewModels;
 using DroidFragmentCrash.Views;
 using Prism;
@@ -34,7 +35,7 @@ namespace DroidFragmentCrash
             containerRegistry.RegisterForNavigation<PrincipalTabbedPage>();
 
             containerRegistry.RegisterInstance<IUserDialogs>(UserDialogs.Instance);
-            containerRegistry.RegisterInstance<ISettings>(Settings.Current);
+            containerRegistry.RegisterSingleton<IAccountManager, AccountManager>();
 		}
 	}
 }

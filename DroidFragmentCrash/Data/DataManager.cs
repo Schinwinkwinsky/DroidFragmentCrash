@@ -1,36 +1,39 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Acr.Settings;
-using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace DroidFragmentCrash.Data
 {
-    public class AccountManager : IAccountManager
+    public class DataManager<T> : IDataManager<T>
     {
-        private string _apiUri;
+        private readonly string _apiUri;
 
-        public AccountManager()
+        public DataManager(string path)
         {
-            // For use with Genymotion.
-            _apiUri = "http://10.0.3.2:5000/api/accounts/signin";
+            _apiUri = "http://10.0.3.2:5000/api/" + path;
         }
 
-        public async Task SignInAsync()
+        public async Task<List<T>> GetAllAsync()
         {
             try
             {
                 using (var client = new HttpClient())
                 {
+                    var token = CrossSettings.Current.Get<string>("AuthToken");
+
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
                     using (var result = await client.GetAsync(_apiUri))
                     {
                         result.EnsureSuccessStatusCode();
 
                         var response = await result.Content.ReadAsStringAsync();
 
-                        var token = JObject.Parse(response)["token"].ToString();
-
-                        CrossSettings.Current.Set<string>("AuthToken", token);
+                        return JsonConvert.DeserializeObject<List<T>>(response);
                     }
                 }
             }
@@ -38,11 +41,6 @@ namespace DroidFragmentCrash.Data
             {
                 throw ex;
             }
-        }
-
-        public void SignOut()
-        {
-            CrossSettings.Current.Clear();
         }
     }
 }

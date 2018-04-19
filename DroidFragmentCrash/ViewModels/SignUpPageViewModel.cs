@@ -16,14 +16,19 @@ namespace DroidFragmentCrash.ViewModels
             set => SetProperty(ref contractSwitch, value);
         }
 
+        private readonly IAccountManager _accountManager;
+
         public DelegateCommand GoToContractPageCommand { get; set; }
 
         public DelegateCommand SignUpCommand { get; set; }
 
-        public SignUpPageViewModel(INavigationService navigationService,
+        public SignUpPageViewModel(IAccountManager accountManager,
+                                   INavigationService navigationService,
                                    IUserDialogs userDialogs) 
             : base(navigationService, userDialogs)
         {
+            _accountManager = accountManager;
+
             Title = "Sign Up";
 
             GoToContractPageCommand = new DelegateCommand(async () => await GoToContractPage());
@@ -52,7 +57,7 @@ namespace DroidFragmentCrash.ViewModels
         {
             IsBusy = true;
 
-            await AccountManager.DefaultInstance.SignInAsync();
+            await _accountManager.SignInAsync();
 
             IsBusy = false;
 
